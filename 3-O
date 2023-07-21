@@ -1,0 +1,6 @@
+3-O
+
+---
+Best case: 0(n log n)
+Average casse: 0(n log n)
+Worst case: 0(n^2)
