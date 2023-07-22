@@ -43,7 +43,8 @@ int lomuto_partition(int *array, int low, int high)
 			}
 		}
 	}
-	if (i + 1 != high)
+
+	if (array[i + 1] != array[high])
 	{
 		swap(array, i + 1, high);
 		print_array(array, high + 1);
@@ -65,6 +66,7 @@ void quick_sort_recursive(int *array, int low, int high)
 	if (low < high)
 	{
 		pivot_idx = lomuto_partition(array, low, high);
+
 		quick_sort_recursive(array, low, pivot_idx - 1);
 		quick_sort_recursive(array, pivot_idx + 1, high);
 
@@ -82,6 +84,7 @@ void quick_sort(int *array, size_t size)
 {
 	if (!array || size < 2)
 		return;
+
 	quick_sort_recursive(array, 0, size - 1);
 }
 
