@@ -59,7 +59,7 @@ void merge(int *array, int *left, size_t left_size,
  */
 void merge_sort(int *array, size_t size)
 {
-	size_t mid = size/2;
+	size_t mid = size / 2;
 	int *left_half;
 	int *right_half = array + mid;
 
