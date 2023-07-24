@@ -11,7 +11,8 @@
  * @right: Pointer to the right sub-array.
  * @right_size: Size of the right sub-array.
  */
-void merge(int *array, int *left, size_t left_size, int *right, size_t right_size)
+void merge(int *array, int *left, size_t left_size,
+		int *right, size_t right_size)
 {
 	size_t i = 0, j = 0, k = 0;
 	int *temp_array;
@@ -58,15 +59,18 @@ void merge(int *array, int *left, size_t left_size, int *right, size_t right_siz
  */
 void merge_sort(int *array, size_t size)
 {
+	size_t mid = size/2;
+	int *left_half;
+	int *right_half = array + mid;
+
 	if (size < 2)
 		return;
 
-	size_t mid = size / 2;
-	int *left_half = array;
-	int *right_half = array + mid;
+	left_half = array;
+	right_half = array + mid;
 
 	merge_sort(left_half, mid);
 	merge_sort(right_half, size - mid);
 
-		merge(array, left_half, mid, right_half, size - mid);
+	merge(array, left_half, mid, right_half, size - mid);
 }
