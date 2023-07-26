@@ -1,7 +1,3 @@
- 2-O
----
-
-Best case: 0(n^2)
-Average case: 0(n^2)
-Worst case: 0(n^2)
-
+0(n^2)
+0(n^2)
+0(n^2)
